@@ -37,6 +37,12 @@
                                           newline-mark))
                             (whitespace-mode 1)))
 
+;; rainbow delimiters
+(use-package rainbow-delimiters
+  :init
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+  (add-hook 'scheme-mode-hook 'rainbow-delimiters-mode))
+
 ;; Package: volatile-highlights
 ;; GROUP: Editing -> Volatile Highlights
 (use-package volatile-highlights
@@ -94,6 +100,10 @@
   :bind (("C-;" . iedit-mode))
   :init
   (setq iedit-toggle-key-default nil))
+
+(use-package autopair
+  :init
+  (autopair-global-mode 1))
 
 ;; Customized functions
 (defun prelude-move-beginning-of-line (arg)
